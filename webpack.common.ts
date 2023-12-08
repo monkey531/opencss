@@ -1,10 +1,11 @@
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { Configuration } from 'webpack';
 
-module.exports = {
+const commonConfig: Configuration = {
     entry: './index.ts',
     output: {
-        filename: 'opencss.min.js',
+        filename: 'opencss.bundle.js',
         path: path.resolve(__dirname, 'build'),
     },
     module: {
@@ -15,30 +16,19 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.scss$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader',
-                ],
-            },
-            /*remove the below for a full bundle in js without extracting css*/
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    'postcss-loader',
                     'sass-loader',
                 ],
             },
         ],
     },
-    optimization: {
-        minimize: true,
-    },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'opencss.min.css',
-        }),
+
     ],
 };
+
+export default commonConfig;

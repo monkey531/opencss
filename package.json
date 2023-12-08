@@ -2,9 +2,13 @@
   "name": "opencss",
   "version": "0.0.1",
   "description": "OpenCSS is a lightweight and versatile CSS utility library designed to streamline your web development process. With OpenCSS, you can easily manage and apply styles to your HTML elements, helping you create modern and responsive web interfaces.",
-  "main": "index.ts",
+  "private": true,
   "scripts": {
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
+    "build:bun --dev": " npx webpack --config webpack.dev.ts",
+    "build:bun --prod": "npx webpack --config webpack.prod.ts"
+
   },
   "bin": {
     "opencss": "bin/opencss-init.ts"
@@ -40,17 +44,25 @@
   },
   "homepage": "https://github.com/fiaz-dev/opencss#readme",
   "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-typescript": "^7.23.3",
     "@types/node": "^20.10.4",
+    "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.3",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "ts-node": "^10.9.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.10.0"
   }
 }

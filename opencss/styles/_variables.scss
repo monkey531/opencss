@@ -1,0 +1,32 @@
+// variables.scss
+
+// Light Theme
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #3498db;
+  --border-color: #dddddd;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+// Dark Theme
+:root[data-theme='dark'] {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --link-color: #3498db;
+  --border-color: #333333;
+  --box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+// Common Variables
+:root {
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+  --spacing-unit: 8px;
+  --border-radius: 4px;
+}

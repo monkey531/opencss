@@ -1,1 +1,1 @@
-import './opencss/styles/_variables.scss';
+import './opencss.scss';
